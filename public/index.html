@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <title>Stripe API</title>
+
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <link href="app.css" rel="stylesheet">
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&amp;display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">Stripe API</h1>
+        </header>
+
+        <!-- ProductList -->
+        <section class="productsList">
+            <div class="wrapper">
+
+                <!-- Product -->
+                <article class="product">
+                    <figure class="product__image">
+                        <img alt="DualSense" src="dualSense.png">
+                    </figure>
+                    <section class="product__description">
+                        <strong class="product__title">DualSense</strong>
+                        <div class="product__price">
+                            <strong class="product__money">$1,500</strong>
+                            <small class="product__denomination">MXN</small>
+                        </div>
+                        <p class="product__text">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis id excepturi nemo voluptates sapiente, tempora fuga natus ullam aliquam.
+                        </p>
+                    </section>
+                    <div class="product__pay">
+                        <button class="product__button" id="checkout-button">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Form -->
+                <form id="payment-form">
+                    <div class="StripeElement StripeElement--empty" id="card-element"></div>
+                    <button disabled="" id="submit" class="button-payment">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="button-text">Pagar</span>
+                    </button>
+                    <p id="card-error" role="alert"></p>
+                    <p class="result-message hidden">
+                        Pago realizado correctamente.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Scripts -->
+        <script defer src="https://js.stripe.com/v3/"></script>
+        <script defer src="app.js"></script>
+    </body>
+</html>
